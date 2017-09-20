@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "214727906149",
+    "firebase_url": "https://parking-hunter-2e77e.firebaseio.com",
+    "project_id": "parking-hunter-2e77e",
+    "storage_bucket": "parking-hunter-2e77e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214727906149:android:a5027843d46d6172",
+        "android_client_info": {
+          "package_name": "com.kinory.meltzer.parkinghunter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214727906149-gueqvlpjmq9anhvv2r125e04ek97jogd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVgEvW0nrox9uQfteB2rjGcJYB81jawnY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
