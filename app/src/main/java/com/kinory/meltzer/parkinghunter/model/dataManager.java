@@ -1,5 +1,5 @@
 package com.kinory.meltzer.parkinghunter.model;
-
+//
 
 /**
  * Created by meltzer on 20/09/2017.
