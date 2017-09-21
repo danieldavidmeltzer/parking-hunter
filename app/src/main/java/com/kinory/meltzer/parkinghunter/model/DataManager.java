@@ -17,6 +17,11 @@ public class DataManager {
 
 
     /**
+     * the user that uses currently the app
+     */
+    public User currentUser;
+
+    /**
      *  an ArrayList that holds the parking spot that should be used in the app
      */
     public ArrayList<ParkingSpot> parkingSpotArrayList = new ArrayList<ParkingSpot>();
