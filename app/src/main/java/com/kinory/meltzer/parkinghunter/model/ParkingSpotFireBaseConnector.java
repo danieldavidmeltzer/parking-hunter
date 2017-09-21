@@ -16,7 +16,7 @@ public class ParkingSpotFireBaseConnector {
 
     public interface ParkingSpotUpdateListener {
 
-        public void onParkingSpotUpdated(ParkingSpot parkingSpot);
+        void onParkingSpotUpdated(ParkingSpot parkingSpot);
     }
 
     private static final String PARKING_SPOT_KEY ="parking_spots";
@@ -27,6 +27,8 @@ public class ParkingSpotFireBaseConnector {
      * @return The key of the saved parking spot.
      */
     public static String saveParkingSpotToDatabase(ParkingSpot parkingSpot) {
+
+        // Gets the database reference
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference parkingSpotsRef = database.getReference(PARKING_SPOT_KEY);
 
@@ -34,13 +36,24 @@ public class ParkingSpotFireBaseConnector {
         if (parkingSpot.getKey() == null)
             parkingSpot.setKey(parkingSpotsRef.push().getKey());
 
+        // Saves the data
         parkingSpotsRef.child(parkingSpot.getKey()).setValue(parkingSpot);
+
         return parkingSpot.getKey();
     }
 
+    /**
+     * Gets a parking spot with a given key from the database (each time it is updated)
+     * @param key The key of the parking spot
+     * @param listener The listener
+     */
     public static void getParkingSpotFromDatabase(String key, ParkingSpotUpdateListener listener) {
+
+        // Gets the database reference
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference parkingSpotsRef = database.getReference(PARKING_SPOT_KEY);
+
+        // Adds the value event listener
         parkingSpotsRef.child(key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
