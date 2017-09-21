@@ -49,18 +49,15 @@ public class User {
      */
     public void logIn(OnCompleteListener<AuthResult> completeListener)
     {
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Log.d(USR_TAG, SUCCESSFUL_LOGIN_TAG);
-                    mUser = mAuth.getCurrentUser();
-
-                }
-                else{
-                    Log.d(USR_TAG, SUCCESSFUL_LOGIN_TAG);
-                    
-                }
+        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                Log.d(USR_TAG, SUCCESSFUL_LOGIN_TAG);
+                mUser = mAuth.getCurrentUser();
+                completeListener.onComplete(task);
+            }
+            else{
+                Log.d(USR_TAG, SUCCESSFUL_LOGIN_TAG);
+                completeListener.onComplete(task);
             }
         });
     }
