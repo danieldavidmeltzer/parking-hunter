@@ -5,7 +5,7 @@ package com.kinory.meltzer.parkinghunter.model;
  * e-mail: giladkinory2000@gmail.com
  */
 
-class DataManager {
+public class DataManager {
     private static final DataManager ourInstance = new DataManager();
 
     static DataManager getInstance() {
