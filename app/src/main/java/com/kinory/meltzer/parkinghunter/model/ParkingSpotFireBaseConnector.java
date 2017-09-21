@@ -33,5 +33,5 @@ public class ParkingSpotFireBaseConnector extends Object {
         String key = parkingSpotsRef.push().getKey();
         parkingSpotsRef.child(key).setValue(parkingSpot);
     }
-
+    
 }
