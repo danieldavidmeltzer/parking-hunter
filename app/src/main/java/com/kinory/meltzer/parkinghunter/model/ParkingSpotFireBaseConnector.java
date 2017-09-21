@@ -33,13 +33,13 @@ public class ParkingSpotFireBaseConnector {
         DatabaseReference parkingSpotsRef = database.getReference(PARKING_SPOT_KEY);
 
         // Gets a unique key if needed
-        if (parkingSpot.getKey() == null)
-            parkingSpot.setKey(parkingSpotsRef.push().getKey());
+        if (parkingSpot.getUniqueKey() == null)
+            parkingSpot.setUniqueKey(parkingSpotsRef.push().getKey());
 
         // Saves the data
-        parkingSpotsRef.child(parkingSpot.getKey()).setValue(parkingSpot);
+        parkingSpotsRef.child(parkingSpot.getUniqueKey()).setValue(parkingSpot);
 
-        return parkingSpot.getKey();
+        return parkingSpot.getUniqueKey();
     }
 
     /**
