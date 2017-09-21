@@ -1,8 +1,8 @@
 package com.kinory.meltzer.parkinghunter.model;
-//
 
 /**
- * Created by meltzer on 20/09/2017.
+ * Created by Gilad Kinory on 21/09/2017.
+ * e-mail: giladkinory2000@gmail.com
  */
 
 class DataManager {
