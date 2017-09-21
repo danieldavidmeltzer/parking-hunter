@@ -19,7 +19,7 @@ public class ParkingSpotFireBaseConnector {
         void onParkingSpotUpdated(ParkingSpot parkingSpot);
     }
 
-    private static final String PARKING_SPOT_KEY ="parking_spots";
+    private static final String PARKING_SPOT_KEY = "parking_spots";
 
     /**
      * Saves a given ParkingSpot to the database
