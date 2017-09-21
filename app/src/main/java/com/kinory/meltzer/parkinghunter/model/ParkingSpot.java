@@ -10,6 +10,8 @@ public class ParkingSpot {
     private double latitude;
     private boolean isAvailable = true;
 
+    public ParkingSpot() {}
+
     public ParkingSpot(double longitude, double latitude) {
         this.longitude = longitude;
         this.latitude = latitude;
