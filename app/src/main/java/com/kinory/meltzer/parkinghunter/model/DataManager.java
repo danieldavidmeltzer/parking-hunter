@@ -19,19 +19,27 @@ public class DataManager {
     /**
      * the user that uses currently the app
      */
-    public User currentUser;
+    private User currentUser = new User();
 
     /**
      *  an ArrayList that holds the parking spot that should be used in the app
      */
-    public ArrayList<ParkingSpot> parkingSpotArrayList = new ArrayList<ParkingSpot>();
+    private ArrayList<ParkingSpot> parkingSpotArrayList = new ArrayList<ParkingSpot>();
 
     /**
      *
      * @return the singleton instance of the data
      */
-    static DataManager getInstance() {
+    public  static DataManager getInstance() {
         return sharedInstance;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public ArrayList<ParkingSpot> getParkingSpotArrayList() {
+        return parkingSpotArrayList;
     }
 
     /**
