@@ -5,13 +5,16 @@ package com.kinory.meltzer.parkinghunter.model;
  * Created by meltzer on 20/09/2017.
  */
 
-class dataManager {
-    private static final dataManager ourInstance = new dataManager();
+class DataManager {
 
-    static dataManager getInstance() {
+    private static final DataManager ourInstance = new DataManager();
+
+    static DataManager getInstance()
+    {
         return ourInstance;
     }
 
-    private dataManager() {
+    private DataManager() {
+
     }
 }
