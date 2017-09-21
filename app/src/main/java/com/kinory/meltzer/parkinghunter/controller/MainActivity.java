@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ParkingSpot parkingSpot = new ParkingSpot(1, 1);
-        ParkingSpotFireBaseConnector connector = new ParkingSpotFireBaseConnector(parkingSpot);
-        connector.saveToDatabase();
+        String key = ParkingSpotFireBaseConnector.saveParkingSpotToDatabase(parkingSpot);
+        ParkingSpotFireBaseConnector.getParkingSpotFromDatabase(key, parkingSpot1 -> {
+            System.out.println(parkingSpot.getLongitude() + ", " + parkingSpot.getLatitude());
+        });
     }
 }

@@ -6,6 +6,7 @@ package com.kinory.meltzer.parkinghunter.model;
 
 public class ParkingSpot {
 
+    private String key;
     private double longitude;
     private double latitude;
     private boolean isAvailable = true;
@@ -49,4 +50,11 @@ public class ParkingSpot {
         setAvailable(true);
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 }
