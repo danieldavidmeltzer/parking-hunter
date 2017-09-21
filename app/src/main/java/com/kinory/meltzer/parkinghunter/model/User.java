@@ -15,7 +15,14 @@ public class User {
     protected void connectToApp(){
 
     }
-    protected void signUp(){
-        
+    public void signUp(ListenerSigningUp listenerSigningUp){
+        listenerSigningUp.signUpFinished(ErrorCode.success);
     }
+}
+
+interface ListenerSigningUp {
+    public void signUpFinished(ErrorCode errorCode);
+}
+enum ErrorCode{
+    success, error
 }
