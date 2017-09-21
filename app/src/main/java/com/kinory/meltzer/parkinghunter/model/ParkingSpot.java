@@ -5,4 +5,46 @@ package com.kinory.meltzer.parkinghunter.model;
  */
 
 public class ParkingSpot {
+
+    private double longitude;
+    private double latitude;
+    private boolean isAvailable = true;
+
+    public ParkingSpot(double longitude, double latitude) {
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    public void takeParkingSpace() {
+        setAvailable(false);
+    }
+
+    public void freeParkingSpace() {
+        setAvailable(true);
+    }
+
 }
