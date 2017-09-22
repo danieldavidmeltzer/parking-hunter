@@ -1,7 +1,9 @@
-package com.kinory.meltzer.parkinghunter;
+package com.kinory.meltzer.parkinghunter.controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.kinory.meltzer.parkinghunter.R;
 
 public class ParkingSpotDetailsActivity extends AppCompatActivity {
 

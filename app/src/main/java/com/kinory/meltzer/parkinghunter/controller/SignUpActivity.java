@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.kinory.meltzer.parkinghunter.R;
 
-public class SignUpVC extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_vc);
+        setContentView(R.layout.activity_sign_up);
     }
 }
