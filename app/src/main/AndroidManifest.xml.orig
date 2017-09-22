@@ -22,8 +22,11 @@
             android:value="AIzaSyA7qYucw8vP0akzCxoh0uADnkeoWy9D2AM" />
 
         <activity android:name=".controller.MapActivity"></activity>
+<<<<<<< HEAD
         <activity android:name=".controller.SignUpVC"></activity>
+=======
         <activity android:name=".ParkingSpotDetailsActivity"></activity>
+>>>>>>> b4833c3a2ad71cfae1f2e5beb3978766e0fe430a
     </application>
 
 </manifest>
