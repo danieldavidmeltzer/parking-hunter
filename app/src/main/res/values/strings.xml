@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Parking Hunter</string>
+    <string name="signupscreen_first_name" >first name</string>
 </resources>
