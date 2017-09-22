@@ -72,7 +72,7 @@ public class User {
      */
     public void signUp(OnCompleteListener<AuthResult> completeListener) {
         mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(completeListener);
-
+        UserDataFirebaseConnector.getSharedInstance().writeNewUserToFirebase(userData);
     }
 
     /**

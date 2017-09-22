@@ -20,10 +20,11 @@ import java.util.Map;
 public class UserDataFirebaseConnector {
 
 
+    //region singleton
     private final static UserDataFirebaseConnector userDataFirebaseConnectorSharedInstance = new UserDataFirebaseConnector();
 
 
-    //region singleton
+
     interface UserDataFireBaseConnectorSyncingInterface{
         void userDataUpdated(UserData userData,DatabaseError databaseError);
     }
@@ -34,6 +35,7 @@ public class UserDataFirebaseConnector {
         return  userDataFirebaseConnectorSharedInstance;
     }
     //endregion
+
 
 
     //region constants
@@ -94,7 +96,7 @@ public class UserDataFirebaseConnector {
     }
 
     /**
-     * unsync  the user data with firebase
+     * Unsync  the user data with firebase
      * @param userDataUniqueID the unique id of the user data
      */
     public void unSyncUserData(String userDataUniqueID)
