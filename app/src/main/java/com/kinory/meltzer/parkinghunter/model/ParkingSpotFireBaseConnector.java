@@ -14,13 +14,16 @@ import java.util.Objects;
 
 public class ParkingSpotFireBaseConnector {
 
+
     public interface ParkingSpotUpdateListener {
 
         void onParkingSpotUpdated(ParkingSpot parkingSpot);
     }
 
     private static final String PARKING_SPOT_KEY = "parking_spots";
-
+    // Gets the database reference
+    private static FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private static DatabaseReference parkingSpotsRef = database.getReference(PARKING_SPOT_KEY);
     /**
      * Saves a given ParkingSpot to the database
      * @param parkingSpot The parking spot to save
@@ -33,13 +36,13 @@ public class ParkingSpotFireBaseConnector {
         DatabaseReference parkingSpotsRef = database.getReference(PARKING_SPOT_KEY);
 
         // Gets a unique key if needed
-        if (parkingSpot.getKey() == null)
-            parkingSpot.setKey(parkingSpotsRef.push().getKey());
+        if (parkingSpot.getUniqueKey() == null)
+            parkingSpot.setUniqueKey(parkingSpotsRef.push().getKey());
 
         // Saves the data
-        parkingSpotsRef.child(parkingSpot.getKey()).setValue(parkingSpot);
+        parkingSpotsRef.child(parkingSpot.getUniqueKey()).setValue(parkingSpot);
 
-        return parkingSpot.getKey();
+        return parkingSpot.getUniqueKey();
     }
 
     /**
@@ -49,9 +52,7 @@ public class ParkingSpotFireBaseConnector {
      */
     public static void getParkingSpotFromDatabase(String key, ParkingSpotUpdateListener listener) {
 
-        // Gets the database reference
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference parkingSpotsRef = database.getReference(PARKING_SPOT_KEY);
+
 
         // Adds the value event listener
         parkingSpotsRef.child(key).addValueEventListener(new ValueEventListener() {
