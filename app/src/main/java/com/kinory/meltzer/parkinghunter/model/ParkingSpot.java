@@ -37,9 +37,9 @@ public class ParkingSpot {
      * @param longitude longitude of the parking spot
      * @param latitude latitude of the parking spot
      */
-    public ParkingSpot(double longitude, double latitude) {
-        this.longitude = longitude;
+    public ParkingSpot(double latitude, double longitude) {
         this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     /**
