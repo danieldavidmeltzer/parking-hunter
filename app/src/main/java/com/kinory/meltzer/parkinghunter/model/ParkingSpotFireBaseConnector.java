@@ -14,16 +14,17 @@ import java.util.Objects;
 
 public class ParkingSpotFireBaseConnector {
 
-
     public interface ParkingSpotUpdateListener {
 
         void onParkingSpotUpdated(ParkingSpot parkingSpot);
     }
 
     private static final String PARKING_SPOT_KEY = "parking_spots";
+
     // Gets the database reference
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private static DatabaseReference parkingSpotsRef = database.getReference(PARKING_SPOT_KEY);
+
     /**
      * Saves a given ParkingSpot to the database
      * @param parkingSpot The parking spot to save
@@ -51,8 +52,6 @@ public class ParkingSpotFireBaseConnector {
      * @param listener The listener
      */
     public static void getParkingSpotFromDatabase(String key, ParkingSpotUpdateListener listener) {
-
-
 
         // Adds the value event listener
         parkingSpotsRef.child(key).addValueEventListener(new ValueEventListener() {
