@@ -7,8 +7,23 @@
     tools:context="com.kinory.meltzer.parkinghunter.controller.ParkingSpotDetailsActivity">
 
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:foreground="?attr/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.constraint.ConstraintLayout>
+
     <fragment
-        android:id="@+id/fragment3"
+        android:id="@+id/parkingSpotDetailsActivityMap"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="351dp"
         android:layout_height="276dp"
@@ -19,7 +34,9 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView2"
@@ -44,7 +61,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="329dp" />
+        tools:layout_editor_absoluteY="284dp" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
