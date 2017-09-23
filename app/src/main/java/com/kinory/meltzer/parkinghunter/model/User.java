@@ -71,8 +71,21 @@ public class User {
      * @param completeListener the listener to call after sign up
      */
     public void signUp(OnCompleteListener<AuthResult> completeListener) {
-        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(completeListener);
-        UserDataFirebaseConnector.getSharedInstance().writeNewUserToFirebase(userData);
+        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    mUser = mAuth.getCurrentUser();
+                    userData.setUniqueId(mUser.getUid());
+                    UserDataFirebaseConnector.getSharedInstance().writeNewUserToFirebase(userData);
+                }
+
+                    completeListener.onComplete(task);
+
+
+            }
+        });
+
     }
 
     /**

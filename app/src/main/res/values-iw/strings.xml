@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">Parking Hunter</string>
     <string name="signupscreen_first_name">שם פרטי</string>
+    <string name="signupscreen_last_name" >שם משפחה</string>
+    <string name="signupscreen_mail_new" >מייל</string>
+    <string name="signupscreen_register_button">הירשם</string>
+    <string name="mainscreen_go_to_register">הירשם</string>
 </resources>

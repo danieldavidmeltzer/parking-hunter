@@ -75,12 +75,12 @@ public class UserDataFirebaseConnector {
     }
 
     /**
-     * write new user to fire base
+     * write new user to fire base, using the id of the user(the userdata instance should have the uid of
+     * the user)
      * @param userData the user data
      */
     public  void writeNewUserToFirebase(UserData userData){
-        DatabaseReference userRef = usersDataRef.push();
-        userData.setUniqueId(userRef.getKey());
+        DatabaseReference userRef = usersDataRef.child(userData.getUniqueId());
         userRef.setValue(userData);
 
     }

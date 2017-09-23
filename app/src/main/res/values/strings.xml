@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Parking Hunter</string>
     <string name="signupscreen_first_name" >first name</string>
+    <string name="signupscreen_last_name" >last name</string>
+    <string name="signupscreen_mail_new" >mail</string>
+    <string name="signupscreen_register_button" >register</string>
+    <string name="mainscreen_go_to_register" >register</string>
 </resources>
