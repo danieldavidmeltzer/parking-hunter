@@ -14,11 +14,6 @@ import java.util.Objects;
 
 public class ParkingSpotFireBaseConnector {
 
-    public interface ParkingSpotUpdateListener {
-
-        void onParkingSpotUpdated(ParkingSpot parkingSpot);
-    }
-
     private static final String PARKING_SPOT_KEY = "parking_spots";
 
     // Gets the database reference
@@ -51,14 +46,14 @@ public class ParkingSpotFireBaseConnector {
      * @param key The key of the parking spot
      * @param listener The listener
      */
-    public static void getParkingSpotFromDatabase(String key, ParkingSpotUpdateListener listener) {
+    public static void getParkingSpotFromDatabase(String key, ResultListener<ParkingSpot> listener) {
 
         // Adds the value event listener
         parkingSpotsRef.child(key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ParkingSpot parkingSpot = dataSnapshot.getValue(ParkingSpot.class);
-                listener.onParkingSpotUpdated(parkingSpot);
+                listener.onGetResult(parkingSpot);
             }
 
             @Override
